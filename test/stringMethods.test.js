@@ -1,4 +1,4 @@
-import { capitalize, reverseString } from './stringMethods.js';
+import { capitalize, reverseString } from '../code/stringMethods.js';
 
 describe('String methods', () => {
 	describe('Capitalize', () => {

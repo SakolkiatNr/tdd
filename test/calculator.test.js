@@ -1,5 +1,4 @@
-// import { types } from "@babel/core";
-import { calculator } from "./calculator.js";
+import { calculator } from "../code/calculator.js";
 
 describe('Calculator', () => {
 	describe('Check function', () => {

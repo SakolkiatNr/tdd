@@ -1,4 +1,4 @@
-import { analyzeArray } from "./analyzeArr.js";
+import { analyzeArray } from "../code/analyzeArr.js";
 
 describe('Analyze array', () => {
 	let array = [1, 2, 3, 4];
