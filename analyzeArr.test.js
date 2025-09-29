@@ -22,12 +22,21 @@ describe('Analyze array', () => {
 	});
 
 	describe('Error Handling', () => {
-		let array = 0;
 		test('Empty array', () => {
-			expect(analyzeArray(array).length()).toBe(4);
-		})
+			expect(analyzeArray([]).length()).toBe(0);
+		});
+
+		test('Not array', () => {
+			expect(() => { analyzeArray('nah') }).toThrow(TypeError);
+		});
+
+		test('Not number in array', () => {
+			expect(() => { analyzeArray(['1', '2']) }).toThrow(TypeError);
+		});
+
+		test('Not number in array', () => {
+			expect(() => { analyzeArray([1, '2']) }).toThrow(TypeError);
+		});
 
 	});
-
-
 });
