@@ -1,6 +1,29 @@
-const capitalize = require('./capitalize.js');
+// const capitalize = require('./capitalize.js');
+import { capitalize } from './capitalize.js';
 
 
-test('capitalize string', () => {
-	expect(capitalize('lmao')).toBe('lmao');
+describe('String methods', () => {
+	describe('capitalize', () => {
+
+		test('Lowercase word', () => {
+			expect(capitalize('string')).toBe('String');
+		});
+
+		test('Uppercase word', () => {
+			expect(capitalize('STRING')).toBe('String');
+		});
+
+		test('Already Capitalized', () => {
+			expect(capitalize('String')).toBe('String');
+		});
+
+		test('Non-string input should throw', () => {
+			expect(() => capitalize(true)).toThrow(TypeError);
+			expect(() => capitalize(null)).toThrow(TypeError);
+			expect(() => capitalize(undefined)).toThrow(TypeError);
+		});
+
+
+	})
 });
+
