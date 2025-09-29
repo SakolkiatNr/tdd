@@ -1,5 +1,13 @@
-function caesarCipher(text, key) {
+export function caesarCipher(text, key) {
+	if (typeof text !== 'string') {
+		throw new TypeError('Message input must be string!');
+	}
 
+	if (typeof key !== 'number') {
+		throw new TypeError('Key input must be number!')
+	}
+
+	return encrypt(text, key);
 }
 
 function shiftChar(key) {
@@ -8,8 +16,8 @@ function shiftChar(key) {
 
 function encrypt(text, key) {
 	let string = text.split('');
-
 	let encryptText = '';
+
 	for (let char in string) {
 		// char code
 		// a -> 97 ... z -> 122
@@ -31,8 +39,5 @@ function encrypt(text, key) {
 
 		encryptText += String.fromCharCode(ch);
 	}
-	console.log(encryptText);
 	return encryptText;
 }
-
-encrypt('Hello, World!', 1);
