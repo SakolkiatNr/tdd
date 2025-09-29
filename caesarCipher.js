@@ -1,13 +1,20 @@
 export function caesarCipher(text, key) {
+	validateInput(text, key);
+	return encrypt(text, key);
+}
+
+function validateInput(text, key) {
+	if (text === '') {
+		throw new Error("Message should have at least one word");
+	}
+
 	if (typeof text !== 'string') {
 		throw new TypeError('Message input must be string!');
 	}
 
 	if (typeof key !== 'number') {
-		throw new TypeError('Key input must be number!')
+		throw new TypeError('Key input must be number!');
 	}
-
-	return encrypt(text, key);
 }
 
 function shiftChar(key) {
