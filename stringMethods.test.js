@@ -1,9 +1,7 @@
-// const capitalize = require('./capitalize.js');
-import { capitalize } from './stringMethods.js';
-
+import { capitalize, reverseString } from './stringMethods.js';
 
 describe('String methods', () => {
-	describe('capitalize', () => {
+	describe('Capitalize', () => {
 
 		test('Lowercase word', () => {
 			expect(capitalize('string')).toBe('String');
@@ -23,6 +21,20 @@ describe('String methods', () => {
 			expect(() => capitalize(null)).toThrow(TypeError);
 			expect(() => capitalize(undefined)).toThrow(TypeError);
 		});
+	});
+
+	describe('Reverse string', () => {
+		test('reverse', () => {
+			expect(reverseString('lmao')).toBe('oaml');
+		});
+
+		test('Non-string input should throw', () => {
+			expect(() => reverseString(123)).toThrow(TypeError);
+			expect(() => reverseString(true)).toThrow(TypeError);
+			expect(() => reverseString(null)).toThrow(TypeError);
+			expect(() => reverseString(undefined)).toThrow(TypeError);
+		});
+
 	});
 });
 
