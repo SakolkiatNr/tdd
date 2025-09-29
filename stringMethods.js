@@ -7,6 +7,16 @@ export function capitalize(string) {
 	return firstChar + string.slice(1).toLowerCase();
 }
 
+export function reverseString(string) {
+	if (typeof string !== 'string') {
+		throw new TypeError('Input must be string');
+	}
+
+	return string.split('').reverse().join('');
+}
+
+
+
 
 
 

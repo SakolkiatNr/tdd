@@ -1,5 +1,5 @@
 // const capitalize = require('./capitalize.js');
-import { capitalize } from './capitalize.js';
+import { capitalize } from './stringMethods.js';
 
 
 describe('String methods', () => {
@@ -18,12 +18,11 @@ describe('String methods', () => {
 		});
 
 		test('Non-string input should throw', () => {
+			expect(() => capitalize(123)).toThrow(TypeError);
 			expect(() => capitalize(true)).toThrow(TypeError);
 			expect(() => capitalize(null)).toThrow(TypeError);
 			expect(() => capitalize(undefined)).toThrow(TypeError);
 		});
-
-
-	})
+	});
 });
 
