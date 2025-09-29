@@ -1,18 +1,18 @@
 export function analyzeArray(array) {
 	validateArray(array);
 
-	const average = () => {
+	const getAvg = () => {
 		let sum = array.reduce((previous, current) => {
 			return previous + current;
 		}, 0);
 		return sum / array.length;
 	}
 
-	const min = () => { return Math.min(...array) };
-	const max = () => { return Math.max(...array) };
-	const length = () => { return array.length };
+	const getMin = () => { return Math.min(...array) };
+	const getMax = () => { return Math.max(...array) };
+	const getLength = () => { return array.length };
 
-	return { average, min, max, length };
+	return { average: getAvg(), min: getMin(), max: getMax(), length: getLength() };
 }
 
 function validateArray(array) {
