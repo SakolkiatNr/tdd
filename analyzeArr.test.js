@@ -1,29 +1,25 @@
 import { analyzeArray } from "./analyzeArr.js";
 
 describe('Analyze array', () => {
-	let array = [1, 2, 3, 100];
+	let array = [1, 2, 3, 4];
 
 	describe('Function', () => {
 		test('Average', () => {
-			expect(analyzeArray(array).average()).toBe(26.5);
+			expect(analyzeArray(array))
+				.toMatchObject(
+					{
+						average: 2.5,
+						min: 1,
+						max: 4,
+						length: 4
+					});
 		});
 
-		test('Min value', () => {
-			expect(analyzeArray(array).min()).toBe(1);
-		});
-
-		test('Max value', () => {
-			expect(analyzeArray(array).max()).toBe(100);
-		});
-
-		test('Array length', () => {
-			expect(analyzeArray(array).length()).toBe(4);
-		});
 	});
 
 	describe('Error Handling', () => {
 		test('Empty array', () => {
-			expect(analyzeArray([]).length()).toBe(0);
+			expect(analyzeArray([]).length).toBe(0);
 		});
 
 		test('Not array', () => {
